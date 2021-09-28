@@ -17,6 +17,7 @@ class Detail extends Component {
   render() {
     const {modalVisible} = this.state;
     const text = this.props.route.params.a;
+    const {navigation} = this.props;
     return (
       <View>
         <Modal
@@ -45,6 +46,13 @@ class Detail extends Component {
           onPress={() => this.setModalVisible(true)}>
           <Text style={styles.textStyle}>Show Modal</Text>
         </Pressable> */}
+        <Text>xxx</Text>
+        <Button
+          title="Go to Details again"
+          onPress={() =>
+            navigation.push('Detail', {a: "Welcome to summoner's rift"})
+          }
+        />
       </View>
     );
   }

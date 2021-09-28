@@ -19,7 +19,7 @@ class HomeScreen extends Component {
         <Button
           title="Go to Details"
           onPress={() =>
-            navigation.push('Detail', {a: "Welcome to summoner's rift"})
+            navigation.navigate('Detail', {a: "Welcome to summoner's rift"})
           }
         />
       </View>
