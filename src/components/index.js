@@ -9,6 +9,7 @@ import ContactList from './ContactList';
 import HomeScreen from './HomeScreen';
 import NavigationContainerScreen from './NavigationContainerScreen';
 import ModalScreen from './ModalScreen';
+import ReduxSample from './ReduxSample';
 
 export {
   Section,
@@ -22,4 +23,5 @@ export {
   HomeScreen,
   NavigationContainerScreen,
   ModalScreen,
+  ReduxSample,
 };
