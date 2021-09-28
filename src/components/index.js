@@ -7,8 +7,8 @@ import SampleViewB from './SampleViewB';
 import ScrollViewDemo from './ScrollViewDemo';
 import ContactList from './ContactList';
 import HomeScreen from './HomeScreen';
-import Detail from './Detail';
 import NavigationContainerScreen from './NavigationContainerScreen';
+import ModalScreen from './ModalScreen';
 
 export {
   Section,
@@ -20,6 +20,6 @@ export {
   ScrollViewDemo,
   ContactList,
   HomeScreen,
-  Detail,
   NavigationContainerScreen,
+  ModalScreen,
 };

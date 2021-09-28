@@ -14,11 +14,13 @@ class HomeScreen extends Component {
   render() {
     const {navigation} = this.props;
     return (
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <View style={styles.container}>
         <Text>Home Screen</Text>
         <Button
           title="Go to Details"
-          onPress={() => navigation.push('Detail', {a: 'xxx1'})}
+          onPress={() =>
+            navigation.push('Detail', {a: "Welcome to summoner's rift"})
+          }
         />
       </View>
     );

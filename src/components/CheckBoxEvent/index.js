@@ -6,15 +6,18 @@ import SampleViewA from '../SampleViewA';
 import SampleViewB from '../SampleViewB';
 
 class CheckBoxEvent extends Component {
+  xxx = 100;
   constructor(props) {
     super(props);
-    this.state = {clicked: false};
+    this.state = {clicked: false, count: 1};
     // This binding is necessary to make `this` work in the callback
     this.onPressButtonA = this.onPressButtonA.bind(this);
     this.onPressButtonB = this.onPressButtonB.bind(this);
   }
   onPressButtonA() {
     // alert('You tapped the buttonA');
+    this.xxx = this.xxx + 1000;
+    this.state.count = this.state.count + 2222;
     this.setState({clicked: true});
   }
   onPressButtonB() {
@@ -33,7 +36,7 @@ class CheckBoxEvent extends Component {
     return (
       <View style={styles.container}>
         <View style={{flexDirection: 'column'}}>
-          <CheckBox />
+          {/* <CheckBox /> */}
           <View style={{flexDirection: 'row'}}>
             <CheckBox
               value={this.state.checked}
@@ -45,6 +48,8 @@ class CheckBoxEvent extends Component {
           </View>
         </View>
         <View style={styles.buttonContainer}>
+          <Text>{this.state.count}</Text>
+          <Text>{this.xxx}</Text>
           <Button onPress={this.onPressButtonA} title="Press A" />
           <Button onPress={this.onPressButtonB} title="Press B" />
         </View>

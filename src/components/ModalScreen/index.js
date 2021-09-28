@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
-import {View, Text, Button, Modal, Alert, Pressable} from 'react-native';
+import {Alert, Modal, Text, Pressable, View} from 'react-native';
+
 import styles from './styles';
 
-class Detail extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modalVisible: false,
-    };
-  }
+class ModalScreen extends Component {
+  state = {
+    modalVisible: false,
+  };
 
   setModalVisible = visible => {
     this.setState({modalVisible: visible});
@@ -16,11 +14,10 @@ class Detail extends Component {
 
   render() {
     const {modalVisible} = this.state;
-    const text = this.props.route.params.a;
     return (
-      <View>
+      <View style={styles.centeredView}>
         <Modal
-          animationType="fade"
+          animationType="slide"
           transparent={true}
           visible={modalVisible}
           onRequestClose={() => {
@@ -29,7 +26,7 @@ class Detail extends Component {
           }}>
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
-              <Text style={styles.modalText}>{text}</Text>
+              <Text style={styles.modalText}>Hello World!</Text>
               <Pressable
                 style={[styles.button, styles.buttonClose]}
                 onPress={() => this.setModalVisible(!modalVisible)}>
@@ -38,16 +35,14 @@ class Detail extends Component {
             </View>
           </View>
         </Modal>
-        {/* <Text>{this.props.route.params.a}</Text> */}
-        <Button title="Show modal" onPress={() => this.setModalVisible(true)} />
-        {/* <Pressable
+        <Pressable
           style={[styles.button, styles.buttonOpen]}
           onPress={() => this.setModalVisible(true)}>
           <Text style={styles.textStyle}>Show Modal</Text>
-        </Pressable> */}
+        </Pressable>
       </View>
     );
   }
 }
 
-export default Detail;
+export default ModalScreen;
