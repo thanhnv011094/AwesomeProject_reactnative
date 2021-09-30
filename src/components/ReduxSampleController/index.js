@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import {connect} from 'react-redux';
+import {up, down} from '../../redux/action_creators/value';
 
 class ReduxSampleController extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (
@@ -16,14 +17,15 @@ class ReduxSampleController extends Component {
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              this.props.dispatch({type: 'UP'});
+              console.log('xxx');
+              this.props.myUp();
             }}>
             <Text style={styles.buttonText}>+</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.button}
             onPress={() => {
-              this.props.dispatch({type: 'DOWN'});
+              this.props.myDown();
             }}>
             <Text style={styles.buttonText}>-</Text>
           </TouchableOpacity>
@@ -33,4 +35,7 @@ class ReduxSampleController extends Component {
   }
 }
 
-export default connect()(ReduxSampleController);
+export default connect(null, {
+  myUp: up,
+  myDown: down,
+})(ReduxSampleController);
