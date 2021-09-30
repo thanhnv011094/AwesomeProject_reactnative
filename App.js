@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {ReduxSample} from './src/components';
 import {Provider} from 'react-redux';
-import {store} from './store';
+import store from './store';
 
 class App extends Component {
   render() {

@@ -10,4 +10,5 @@ const conducer = (state = {value: 10}, action) => {
   return state;
 };
 
-export const store = createStore(conducer);
+const store = createStore(conducer);
+export default store;
