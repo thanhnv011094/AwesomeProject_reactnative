@@ -1,6 +1,6 @@
 import {ACTION_UP, ACTION_DOWN} from '../../../../constants';
 
-const value_reducer = (state = 1001, action) => {
+const value = (state = 1001, action) => {
   if (action.type === ACTION_UP) {
     return state + 1;
   }
@@ -10,4 +10,4 @@ const value_reducer = (state = 1001, action) => {
   return state;
 };
 
-export default value_reducer;
+export default value;
